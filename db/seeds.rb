@@ -2,8 +2,8 @@ Shelter.destroy_all
 Pet.destroy_all
 VeterinaryOffice.destroy_all
 Veterinarian.destroy_all
-# Application.destroy_all
-# ApplicationPet.destroy_all
+Application.destroy_all
+ApplicationPet.destroy_all
 
 # Shelters
 aurora_shelter = Shelter.create!(name: 'Aurora Shelter', city: 'Aurora, CO', foster_program: false, rank: 3)
