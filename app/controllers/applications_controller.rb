@@ -4,18 +4,13 @@ class ApplicationsController < ApplicationController
   end
 
   def show
+    @application = Application.find(params[:id])
     if params[:adopt]
-      @application = Application.find(params[:id])
-      if @application.pets.include?(Pet.find(params[:adopt]))
-        @application = Application.find(params[:id])
-      else
+      if !@application.pets.include?(Pet.find(params[:adopt]))
         @pets_to_adopt = @application.pets << Pet.find(params[:adopt])
       end
     elsif params[:search]
-      @application = Application.find(params[:id])
       @pets = Pet.search(params[:search])
-    else
-      @application = Application.find(params[:id])
     end
   end
 
