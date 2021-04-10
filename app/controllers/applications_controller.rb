@@ -7,7 +7,8 @@ class ApplicationsController < ApplicationController
     @application = Application.find(params[:id])
     if params[:adopt]
       if !@application.pets.include?(Pet.find(params[:adopt]))
-        @pets_to_adopt = @application.pets << Pet.find(params[:adopt])
+        @pets_to_adopt = @application.add_pet
+        # @pets_to_adopt = @application.pets << Pet.find(params[:adopt])
       end
     elsif params[:search]
       @pets = Pet.search(params[:search])

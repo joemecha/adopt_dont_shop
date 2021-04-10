@@ -5,6 +5,10 @@ class Application < ApplicationRecord
   validates :state, presence: true
   validates :zip_code, presence: true, numericality: true
 
-  has_many :application_pets, dependent: :destroy 
+  has_many :application_pets, dependent: :destroy
   has_many :pets, through: :application_pets
+
+  def add_pet
+    application.pets << Pet.find(params[:adopt])
+  end
 end
