@@ -21,6 +21,9 @@ RSpec.describe Shelter, type: :model do
     @pet_2 = @shelter_1.pets.create(name: 'Clawdia', breed: 'shorthair', age: 3, adoptable: true)
     @pet_3 = @shelter_3.pets.create(name: 'Lucille Bald', breed: 'sphynx', age: 8, adoptable: true)
     @pet_4 = @shelter_1.pets.create(name: 'Ann', breed: 'ragdoll', age: 5, adoptable: true)
+
+    # add applications and application_pets for 'has_pending' test; adjust other tests for any new results
+
   end
 
   describe 'class methods' do
@@ -44,13 +47,13 @@ RSpec.describe Shelter, type: :model do
 
     describe '#reverse_abc_order' do
       it 'orders shelters by descending abc order' do
-        # expect(Shelter.search("Fancy")).to eq([@shelter_3])
+        expect(Shelter.reverse_abc_order).to eq([@shelter_2, @shelter_3, @shelter_1])
       end
     end
 
     describe '#has_pending' do
       it 'selects shelters that have applications with a pending status' do
-        # expect(Shelter.search("Fancy")).to eq([@shelter_3])
+        expect(Shelter.has_pending).to eq([@shelter_1, @shelter_2])
       end
     end
   end
