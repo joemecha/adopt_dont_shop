@@ -45,10 +45,12 @@ RSpec.describe 'the admin shelters index' do
   end
 
   it 'lists all the shelter names' do
-    expect(page).to have_content(@shelter_1.name)
-    expect(page).to have_content(@shelter_2.name)
-    expect(page).to have_content(@shelter_3.name)
-    expect(page).to have_content(@shelter_4.name)
+    within "#all-shelters" do
+      expect(page).to have_content(@shelter_1.name)
+      expect(page).to have_content(@shelter_2.name)
+      expect(page).to have_content(@shelter_3.name)
+      expect(page).to have_content(@shelter_4.name)
+    end
   end
 
 
@@ -57,17 +59,18 @@ RSpec.describe 'the admin shelters index' do
     it "I see all Shelters in the system listed in reverse alphabetical order\
        by name" do
 
-      expect(@shelter_4.name).to appear_before(@shelter_2.name)
-      expect(@shelter_3.name).to appear_before(@shelter_1.name)
+      within "#all-shelters" do
+        expect(@shelter_4.name).to appear_before(@shelter_2.name)
+        expect(@shelter_3.name).to appear_before(@shelter_1.name)
+      end
     end
   end
 
   describe "shelters with pending applications" do
-    it "When I visit the admin shelter index I see a section for 'Shelter's\
-     with Pending Applications' with the name of every shelter that has a \
-     pending application" do
+    it "I see a section for 'Shelters with Pending Applications' with the name\
+        of every shelter that has a pending application" do
 
-      within "#pending" do
+      within "#pending-shelters" do
         expect(page).to have_content("Shelters With Pending Applications")
         expect(page).to have_content(@shelter_1.name)
         expect(page).to have_content(@shelter_4.name)
