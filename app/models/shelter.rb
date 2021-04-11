@@ -5,7 +5,7 @@ class Shelter < ApplicationRecord
 
   has_many :pets, dependent: :destroy
   has_many :application_pets, through: :pets
-  has_many :applications, through: :pet_applications
+  has_many :applications, through: :application_pets
 
   def self.order_by_recently_created
     order(created_at: :desc)
@@ -23,8 +23,8 @@ class Shelter < ApplicationRecord
   end
 
   def self.has_pending
-    joins(:applications)
-    .where(applications: {status: "Pending"})
+    joins(pets: [:applications])
+    .where("applications.status = 'Pending'")
     .order(:name)
     .distinct
     # activerecord_pending = self.find_by_sql("select shelters.* from shelters join pets on shelters.id = pets.shelter_id join application_pets on pets.id = application_pets.pet_id join applications on application_pets.application_id = applications.id where applications.status = 'Pending'")
