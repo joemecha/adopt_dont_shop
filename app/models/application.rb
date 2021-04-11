@@ -8,8 +8,7 @@ class Application < ApplicationRecord
   has_many :application_pets
   has_many :pets, through: :application_pets
 
-
-  def self.pending
-      where(status: "Pending")
+  def pet_count
+    pets.count
   end
 end

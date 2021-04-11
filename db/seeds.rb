@@ -1,7 +1,7 @@
+ApplicationPet.destroy_all
 Application.destroy_all
 Shelter.destroy_all
 Pet.destroy_all
-# ApplicationPet.destroy_all
 VeterinaryOffice.destroy_all
 Veterinarian.destroy_all
 
@@ -39,14 +39,7 @@ denver_animal_shelter.pets.create!(name: 'Maisie', breed: 'American staffordshir
 denver_animal_shelter.pets.create!(name: 'Rug', breed: 'mixed', age: 3, adoptable: true)
 denver_animal_shelter.pets.create!(name: 'Waffles', breed: 'hound', age: 2, adoptable: true)
 
-Application.create!(name: "Carol Smith", street: "153 High Crest rd", city: "Pelham", state: "AL", zip_code: "35124")
-
-application_pets_1 = rug.applications.create!(name: "Edward Jones", street: "12277 94 street", city: "Largo", state: "FL", zip_code: "33773")
-
-
-
-Applications
-
+# Applications
 hayley = Application.create!(applicant_name: 'Hayley Williams',
   street: "789 Rose St.",
   city: "Golden",
@@ -73,8 +66,8 @@ ima = Application.create!(applicant_name: 'Ima Hoarder',
   )
 
 # Application_pets
-application_pet_1 = ApplicationPet.create!(application_id: hayley.id, pet_id: aurora_shelter.pets.first.id, statement: "I will sing to my pet every day")
-application_pet_2 = ApplicationPet.create!(application_id: jeff.id, pet_id: co_humane_society.pets.first.id, statement: "I have a fence")
+application_pet_1 = ApplicationPet.create!(application_id: hayley.id, pet_id: aurora_shelter.pets.first.id)
+application_pet_2 = ApplicationPet.create!(application_id: jeff.id, pet_id: co_humane_society.pets.first.id)
 application_pet_3 = ApplicationPet.create!(application_id: ima.id, pet_id: foothills_shelter.pets.first.id)
 
 ######################
