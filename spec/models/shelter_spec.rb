@@ -22,8 +22,6 @@ RSpec.describe Shelter, type: :model do
     @pet_3 = @shelter_3.pets.create(name: 'Lucille Bald', breed: 'sphynx', age: 8, adoptable: true)
     @pet_4 = @shelter_1.pets.create(name: 'Ann', breed: 'ragdoll', age: 5, adoptable: true)
 
-    # add applications and application_pets for 'has_pending' test; adjust other tests for any new results
-
   end
 
   describe 'class methods' do
@@ -52,8 +50,18 @@ RSpec.describe Shelter, type: :model do
     end
 
     describe '#has_pending' do
-      it 'selects shelters that have applications with a pending status' do
-        expect(Shelter.has_pending).to eq([@shelter_1, @shelter_2])
+      it 'returns names of all shelters with pending applications' do
+
+        application = Application.create!(applicant_name: 'Hayley Williams',
+          street: "789 Rose St.",
+          city: "Golden",
+          state: "CO",
+          zip_code: "80123",
+          statement: "I sing to my pets",
+          status: "Pending"
+          )
+        @pet_1.applications << application
+        expect(Shelter.has_pending).to eq([@shelter_1])
       end
     end
   end

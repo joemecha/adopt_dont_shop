@@ -41,16 +41,16 @@ RSpec.describe Application, type: :model do
      @application_pet_2 = ApplicationPet.create!(application_id: @jeff.id, pet_id: @shelter_4.pets.first.id)
      @application_pet_3 = ApplicationPet.create!(application_id: @ima.id, pet_id: @shelter_3.pets.first.id)
    end
-   
+
   describe "relationships" do
     it {should have_many :application_pets}
     it {should have_many(:pets).through(:application_pets)}
   end
 
-  describe "class methods" do
-    describe "#pending" do
-      it "returns all applications with 'pending' status" do
-        expect(Application.pending).to eq([@hayley, @jeff])
+  describe "instance methods" do
+    describe ".pet_count" do
+      it "returns number of pets on application" do
+        expect(@hayley.pet_count).to eq(1)
       end
     end
   end
