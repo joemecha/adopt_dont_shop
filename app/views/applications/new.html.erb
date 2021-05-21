@@ -1,20 +1,54 @@
+<style>
+  input[type=text],
+  select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+    width: 100%;
+    background-color: mediumblue;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: darkblue;
+  }
+
+  div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+</style>
+
 <h1>Adoption Application</h1>
 
 <%= form_with url: "/applications", method: :post, local: true do |f| %>
 <h3><%= f.label "Start a new application:" %></h3><br>
-<%= f.label :applicant_name %>
-<%= f.text_field :applicant_name %><br>
-<p>Address:
-<div><%= f.label :street %>
-<%= f.text_field :street %></div>
-<%= f.label :city %>
-<%= f.text_field :city %>
-<%= f.label :state %>
-<%= f.select :state, options_for_select(us_states) %>
-<%= f.label :zip_code %>
-<%= f.text_field :zip_code %></p>
-<% f.text_field :statement, value: " " %>
-<% f.select :status, value: "in progress" %>
-<br>
-<%= f.submit "Submit" %>
-<% end %>
+<div><%= f.label :applicant_name %>
+  <%= f.text_field :applicant_name %>
+  <%= f.label :street %>
+  <%= f.text_field :street %>
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+  <%= f.label :state %>
+  <%= f.select :state, options_for_select(us_states) %>
+  <%= f.label :zip_code %>
+  <%= f.text_field :zip_code %></p>
+  <% f.text_field :statement, value: " " %>
+  <% f.select :status, value: "in progress" %>
+  <br>
+  <%= f.submit "Submit" %>
+  <% end %>
+</div>

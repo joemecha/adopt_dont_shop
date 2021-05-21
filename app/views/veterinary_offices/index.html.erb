@@ -4,10 +4,12 @@
   'veterinary_offices?sort=veterinarian_count' %>
 
 <% @veterinary_offices.each do |office| %>
+<div class="boxit">
   <div id="veterinary-office-<%= office.id %>">
     <h3><%= office.name %></h3>
     <p>Created at: <%= office.created_at %></p>
     <%= link_to "Update #{office.name}", "/veterinary_offices/#{office.id}/edit" %>
     <%= link_to "Delete #{office.name}", "/veterinary_offices/#{office.id}", method: :delete %>
   </div>
+</div>
 <% end %>

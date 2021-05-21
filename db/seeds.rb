@@ -15,8 +15,8 @@ denver_animal_shelter = Shelter.create!(name: 'Denver Animal Shelter', city: 'De
 
 # Pets
 aurora_shelter.pets.create!(name: 'Mr. Pirate', breed: 'tuxedo shorthair', age: 5, adoptable: true)
-aurora_shelter.pets.create!(name: 'Clawdia', breed: 'shorthair', age: 3, adoptable: true)
-aurora_shelter.pets.create!(name: 'Ann', breed: 'ragdoll', age: 3, adoptable: false)
+aurora_shelter.pets.create!(name: 'Clawdine', breed: 'shorthair', age: 3, adoptable: true)
+aurora_shelter.pets.create!(name: 'Penny', breed: 'ragdoll', age: 3, adoptable: false)
 
 co_humane_society.pets.create!(name: 'Link', breed: 'dachshund', age: 1, adoptable: true)
 co_humane_society.pets.create!(name: 'Tofu', breed: 'boxer', age: 1, adoptable: true)
@@ -28,10 +28,12 @@ foothills_shelter.pets.create!(name: 'Petunia', breed: 'chihuahua', age: 1, adop
 
 humane_society_boulder.pets.create!(name: 'Emma', breed: 'beagle', age: 1, adoptable: true)
 humane_society_boulder.pets.create!(name: 'Odessa', breed: 'border terrier', age: 6, adoptable: true)
+humane_society_boulder.pets.create!(name: 'Cola', breed: 'catahoula leopard dog', age: 2, adoptable: true)
 
 animal_rescue_rockies.pets.create!(name: 'Bear', breed: 'flat-coated retriever', age: 0, adoptable: true)
 animal_rescue_rockies.pets.create!(name: 'Six', breed: 'great pyrenees', age: 0, adoptable: true)
 animal_rescue_rockies.pets.create!(name: 'Eddie', breed: 'pit bull terrier', age: 3, adoptable: true)
+animal_rescue_rockies.pets.create!(name: 'Picnic', breed: 'pomeranian and spitz', age: 4, adoptable: true)
 
 denver_animal_shelter.pets.create!(name: 'Leia', breed: 'pit bull terrier', age: 4, adoptable: true)
 denver_animal_shelter.pets.create!(name: 'Josh', breed: 'Australian shepherd', age: 3, adoptable: true)
