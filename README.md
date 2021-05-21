@@ -1,10 +1,7 @@
-```
-░█▀▀█ ▒█▀▀▄ ▒█▀▀▀█ ▒█▀▀█ ▀▀█▀▀ 　 ▒█▀▀▄ ▒█▀▀▀█ ▒█▄░▒█ █ ▀▀█▀▀ 　 ▒█▀▀▀█ ▒█░▒█ ▒█▀▀▀█ ▒█▀▀█
-▒█▄▄█ ▒█░▒█ ▒█░░▒█ ▒█▄▄█ ░▒█░░ 　 ▒█░▒█ ▒█░░▒█ ▒█▒█▒█ ░ ░▒█░░ 　 ░▀▀▀▄▄ ▒█▀▀█ ▒█░░▒█ ▒█▄▄█
-▒█░▒█ ▒█▄▄▀ ▒█▄▄▄█ ▒█░░░ ░▒█░░ 　 ▒█▄▄▀ ▒█▄▄▄█ ▒█░░▀█ ░ ░▒█░░ 　 ▒█▄▄▄█ ▒█░▒█ ▒█▄▄▄█ ▒█░░░
-```
+![Title](/app/assets/images/title.jpg "Adopt Don't Shop")
 ## Table of contents
 * [General info](#general-info)
+* [Link](#link)
 * [Database Schema](#database-schema)
 * [Learning Goals/Areas of Focus](#learning-goals)
 * [Technologies](#technologies)
@@ -14,20 +11,25 @@
 * [Contact](#contact)
 
 ## General info
-In this project, a Pet Adoption Platform was built from existing code base.
+This project is a simple Pet Adoption Platform built from an existing code base.
 Users are able to search, view, and apply to adopt pets.
 
 Admins will be able to approve or reject applications and see statistics for the
 Shelters, Pets, and Applications in the system.
 
+
+## Link
+### https://adopt-dont-shop-1118.herokuapp.com/
+
+
 ## Database Schema
 ![Diagram](/app/assets/images/database_diagram.jpg "Database Diagram")
 
-### Given database design
+### Provided database design
 ![visual-schema.png](https://i.postimg.cc/0ywZgQ1W/visual-schema.png)
 
 ## Learning Goals / Areas of Focus
-* Build out CRUD functionality for a many to many relationship
+* Build out CRUD functionality for a many-to-many relationship
 * Use ActiveRecord to write queries that join multiple tables of data together
 * Use MVC to organize code effectively, limiting the amount of logic included in
   views and controllers
@@ -38,6 +40,8 @@ Shelters, Pets, and Applications in the system.
 * Track user stories using GitHub Projects
 * Deploy an application to Heroku
 * Build off of an existing codebase
+* Basic styling with CSS and production images using Rails' asset pipline
+
 
 ## Technologies
 Project is created with:
@@ -45,12 +49,6 @@ Project is created with:
 * Rails version 5.2.4.3
 * PostgeSQL
 
-## Setup
-To run this program, view in browser
-1. Open the browser of your choice and navigate to:
-   '''
-   https://pumpkin-pie-69630.herokuapp.com/
-   '''
 
 ## Features
 List of features ready and TODOs for future development
@@ -63,6 +61,7 @@ List of features ready and TODOs for future development
   application
 * SQL and ActiveRecord logic behind the scenes to sort and filter data
 * Admin shelter page that lists shelters with pending applications
+* Mastered Rails' asset pipline to correctly display images in production
 
 To-do list:
 * SQL to ActiveRecord refactor of some queries
@@ -71,13 +70,15 @@ To-do list:
   of pet
 * Additional SQL and ActiveRecord methods to alter data display
 
+
 ## Status
 Project is: _in progress_
 
+
 ## Contact
 Created by
-* [@joemecha](https://github.com/joemecha)
+* Joe Mecha [GitHub](https://github.com/joemecha) • [LinkedIn](https://www.linkedin.com/in/joemecha/)
 
 ~ feel free to contact me ~
 
-![Rug](/app/assets/images/rug.jpeg "Adopt this dog")
+![Rug](/app/assets/images/rug.jpg "Adopt this dog")
