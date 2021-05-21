@@ -60,4 +60,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.action_controller.include_all_helpers = true
+
+  # Development will compile assets 'on the fly'
+  config.assets.prefix = "/dev-assets"
 end
