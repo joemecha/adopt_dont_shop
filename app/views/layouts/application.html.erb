@@ -1,35 +1,68 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Adopt, Don't Shop</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-  </head>
+<head>
+  <title>Adopt, Don't Shop</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
-    <% flash.each do |type, msg| %>
-      <div>
-        <%= msg %>
-      </div>
-    <% end %>
-    <section>
-      <p><%= link_to "Pets", "/pets" %></p>
-      <p><%= link_to "Shelters", "/shelters" %></p>
-      <p><%= link_to "Veterinarians", "/veterinarians" %></p>
-      <p><%= link_to "Veterinary Offices", "/veterinary_offices" %></p>
-    </section>
-    <%= yield %>
-  </body>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <style>
+    #mynavlist {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
 
-  <br>
-  <p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
-  <%
-=begin%>
- <%= image_tag "rug.jpg" %><%= image_tag "josh.jpeg" %><%= image_tag "tofu.jpeg" %> 
-<%
-=end%>
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+      background-color: #111;
+    }
+
+    .active {
+      background-color: midnightblue;
+    }
+  </style>
+</head>
+
+<body>
+  <% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+  <% end %>
+  <section>
+    <ul id="mynavlist">
+      <li><a class="active" <%= link_to "Home", "/" %></li>
+      <li><a <%= link_to "Pets", "/pets" %></li>
+      <li><a <%= link_to "Shelters", "/shelters" %></a></li>
+      <li><a <%= link_to "Veterinarians", "/veterinarians" %></a></li>
+      <li><a <%= link_to "Veterinary Offices", "/veterinary_offices" %></a></li>
+    </ul>
+  </section>
+  <%= yield %>
+</body>
+
+<br>
+<footer>
+  <% prefix = ["rug","josh","tofu","bear","picnic","cola"].sample %>
+  <div>
+    <img src=<%=asset_path("#{prefix}.jpeg")%> height="400" style="margin:10px">
+  </div>
+</footer>
 
 </html>
