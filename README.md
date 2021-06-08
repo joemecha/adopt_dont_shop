@@ -40,7 +40,7 @@ Shelters, Pets, and Applications in the system.
 * Track user stories using GitHub Projects
 * Deploy an application to Heroku
 * Build off of an existing codebase
-* Basic styling with CSS and production images using Rails' asset pipline
+* Basic styling with CSS and production images using Rails' asset pipeline
 
 
 ## Technologies
