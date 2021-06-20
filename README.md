@@ -21,6 +21,9 @@ Shelters, Pets, and Applications in the system.
 ## Link
 ### https://adopt-dont-shop-1118.herokuapp.com/
 
+For the ADMIN side of the site visit:
+### https://adopt-dont-shop-1118.herokuapp.com/admin/shelters
+Pending application functionality for admin is _IN PROGRESS_
 
 ## Database Schema
 ![Diagram](/app/assets/images/database_diagram.jpg "Database Diagram")
@@ -77,7 +80,7 @@ Project is: _in progress_
 
 ## Contact
 Created by
-* Joe Mecha [GitHub](https://github.com/joemecha) • [LinkedIn](https://www.linkedin.com/in/joemecha/)
+  #### Joe Mecha [GitHub](https://github.com/joemecha) • [LinkedIn](https://www.linkedin.com/in/joemecha/)
 
 ~ feel free to contact me ~
 
