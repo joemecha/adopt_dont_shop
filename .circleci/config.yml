@@ -65,6 +65,14 @@ jobs:
           paths:
             - ./adopt_dont_shop
 
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postgres
+
 workflows:
   version: 2
   integration:
